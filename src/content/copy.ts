@@ -31,18 +31,18 @@ export const jobs = {
   story:
     'Since 2024 I’ve held four jobs in four different industries: solar, manufacturing, marketing, and now mutual funds. Each time I started out knowing very little, figured it out, and then made it clear for the next person. That last part is why I like working with clients.',
   list: [
-    { industry: 'Solar', role: 'Solar Panel Sales Assistant', org: 'Sunrun', when: 'Jun – Aug 2024', where: 'Worcester, MA', bullets: [
+    { industry: 'Solar', role: 'Solar Panel Sales Assistant', org: 'Sunrun', logo: { src: '/logos/sunrun.webp', alt: 'Sunrun logo', w: 320, h: 320 }, when: 'Jun – Aug 2024', where: 'Worcester, MA', bullets: [
       'Walked customers through solar products, pricing, and installation so they understood their options.',
       'Prepared proposals and quotes, and helped the sales team generate leads and follow up.'] },
-    { industry: 'Manufacturing', role: 'Business Analytics Intern', org: 'IPG Photonics', when: 'Jun – Dec 2025', where: 'Marlborough, MA', bullets: [
+    { industry: 'Manufacturing', role: 'Business Analytics Intern', org: 'IPG Photonics', logo: { src: '/logos/ipg-photonics.webp', alt: 'IPG Photonics logo', w: 960, h: 240 }, when: 'Jun – Dec 2025', where: 'Marlborough, MA', bullets: [
       'Interviewed staff to write standard operating procedures and built them into the production database.',
       'Created ticketing systems in Ivanti for facilities and in Jira for diode assembly.',
       'Validated production-time data on human and manufacturing errors for a company audit.'] },
-    { industry: 'Marketing', role: 'Marketing Intern', org: '52 Launch', when: 'Feb – May 2026', where: 'Framingham, MA', bullets: [
+    { industry: 'Marketing', role: 'Marketing Intern', org: '52 Launch', logo: { src: '/logos/52-launch.webp', alt: '52 Launch logo', w: 320, h: 297 }, when: 'Feb – May 2026', where: 'Framingham, MA', bullets: [
       'Supported lead-generation campaigns, working closely with sales to improve outreach.',
       'Increased social media engagement with short-form video and interactive polls.',
       'Analyzed competitor brands to find gaps and sharpen messaging.'] },
-    { industry: 'Mutual funds', role: 'Client Representative Intern', org: 'Franklin Templeton / Putnam Investments', when: 'Jun 2026 – present', where: '', bullets: [
+    { industry: 'Mutual funds', role: 'Client Representative Intern', org: 'Franklin Templeton / Putnam Investments', logo: { src: '/logos/franklin-templeton.webp', alt: 'Franklin Templeton Investments logo', w: 720, h: 395 }, when: 'Jun 2026 – present', where: '', bullets: [
       'Handle inbound calls from financial advisors, shareholders, and beneficiaries about mutual fund accounts.',
       'Explain purchases, redemptions, exchanges, and account transfers, along with share classes, fees, and minimum investments.',
       'Guide beneficiaries through trust and inheritance paperwork with patience and clear next steps.'],

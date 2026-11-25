@@ -16,7 +16,7 @@ export default function Jobs() {
         cards.forEach((card, i) => {
           if (i === 0) return
           const t = i * 1.2
-          tl.to(cards[i - 1], { scale: 0.92, yPercent: -6, filter: 'brightness(0.55)', duration: 1, ease: 'power2.inOut' }, t)
+          tl.fromTo(cards[i - 1], { scale: 1, yPercent: 0, filter: 'brightness(1)' }, { scale: 0.92, yPercent: -6, filter: 'brightness(0.55)', duration: 1, ease: 'power2.inOut' }, t)
           tl.to(card, { opacity: 1, duration: 0.1 }, t)
           tl.to(card, { yPercent: 0, rotation: 0, duration: 1, ease: 'power2.inOut' }, t)
           tl.to('.level-fill', { scaleX: (i + 1) / cards.length, duration: 1, ease: 'power2.inOut' }, t)
@@ -40,6 +40,7 @@ export default function Jobs() {
             <article className="job" key={j.org} style={{ zIndex: i + 1 }}>
               <div className="job-side">
                 <span className="job-n">{String(i + 1).padStart(2, '0')}<small> / 04</small></span>
+                <img className="job-logo" src={j.logo.src} alt={j.logo.alt} width={j.logo.w} height={j.logo.h} loading="lazy" decoding="async" />
                 <p className="job-industry">{j.industry}</p>
               </div>
               <div className="job-main">

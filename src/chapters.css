@@ -27,6 +27,7 @@
 .job { position:absolute; inset:0 0 6px 0; display:grid; grid-template-columns:minmax(260px,.36fr) 1fr; gap:clamp(16px,3vw,40px); background:var(--ink-2); border:1px solid #2f3a35; border-radius:14px; padding:clamp(16px,3vw,36px); box-shadow:6px 8px 0 rgba(0,0,0,.55); overflow:hidden; }
 .job-side { display:flex; flex-direction:column; justify-content:space-between; }
 .job-n { font-size:1rem; color:var(--sage); font-weight:600; } .job-n small { color:#B9B3B0; font-weight:400; }
+.job-logo { height:clamp(84px,17vh,148px); width:auto; max-width:100%; object-fit:cover; align-self:flex-start; border-radius:10px; box-shadow:3px 4px 0 rgba(0,0,0,.55); }
 .job-industry { margin:0; font-family:var(--serif); font-style:italic; font-size:clamp(2rem,3.3vw,2.8rem); line-height:1; color:var(--blush); }
 .job h3 { margin:0; font-family:var(--sans); font-weight:600; font-size:clamp(1.15rem,2.2vw,1.6rem); }
 .job-meta { margin:.2em 0 .9em; color:var(--sage); font-size:.95rem; }
@@ -47,7 +48,7 @@
   .places-body { gap:16px; } .dot { left:-26px; }
   .jobs-inner { padding:92px 16px 20px; }
   .job { grid-template-columns:1fr; grid-template-rows:auto 1fr; gap:10px; padding:16px; overflow-y:auto; }
-  .job-side { flex-direction:row; align-items:baseline; gap:12px; } .job-industry { font-size:2.2rem; }
+  .job-side { flex-direction:row; flex-wrap:wrap; align-items:center; gap:10px 14px; } .job-logo { height:48px; align-self:center; border-radius:8px; } .job-industry { font-size:2.2rem; }
   .jobs-head p { display:none; }
   .board { grid-template-columns:1fr; }
 }
