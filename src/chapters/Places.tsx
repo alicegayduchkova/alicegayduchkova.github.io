@@ -30,7 +30,7 @@ export default function Places() {
           <div className="rail" aria-hidden="true"><div className="rail-fill" /></div>
           <ol className="place-list">
             {places.lived.map((p) => (
-              <li className="place" key={p}><span className="dot" aria-hidden="true" /><span className="place-name">{p}</span><span className="place-note">{places.livedNote}</span></li>
+              <li className="place" key={p}><span className="dot" aria-hidden="true" /><span className="place-name">{p}</span></li>
             ))}
             <li className="place place-home"><span className="dot" aria-hidden="true" /><span className="place-name">{places.home.name}</span><span className="place-note">{places.home.note}, {places.home.sub}</span></li>
           </ol>
