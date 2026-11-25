@@ -1,0 +1,61 @@
+.chapter { position:relative; }
+.chapter h2 { font-size:clamp(2.2rem,5.6vw,4.4rem); color:var(--blush); }
+.muted { color:#B9B3B0; }
+
+/* 1. Places */
+.places { height:100vh; height:100svh; overflow:hidden; display:flex; align-items:center; }
+.places-inner { width:min(1100px,100%); margin:0 auto; padding:96px 24px 40px; display:grid; gap:clamp(20px,4vh,44px); }
+.places-head { max-width:20ch; }
+.places-body { display:flex; gap:22px; }
+.rail { width:2px; background:#26302b; position:relative; margin:10px 0 10px 6px; flex:none; }
+.rail-fill { position:absolute; inset:0; background:var(--sage); transform-origin:50% 0; }
+.place-list { list-style:none; margin:0; padding:0; display:grid; gap:clamp(8px,2vh,20px); }
+.place { display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; position:relative; }
+.dot { position:absolute; left:-30px; top:.55em; width:12px; height:12px; border-radius:50%; background:var(--sage); box-shadow:0 0 0 4px var(--ink); }
+.place-name { font-family:var(--serif); font-style:italic; font-size:clamp(1.8rem,4.6vw,3.2rem); line-height:1.1; }
+.place-note { color:#B9B3B0; font-size:1rem; }
+.place-home .place-name { color:var(--blush); font-size:clamp(2.2rem,6vw,4.2rem); } .place-home .dot { background:var(--blush); }
+.places-note { max-width:60ch; margin:0; font-size:clamp(1rem,1.6vw,1.2rem); color:var(--paper); }
+
+/* 2. Jobs */
+.jobs { height:100vh; height:100svh; overflow:hidden; }
+.jobs-inner { height:100%; width:min(1100px,100%); margin:0 auto; padding:84px 24px 28px; display:flex; flex-direction:column; gap:clamp(10px,2vh,22px); }
+.jobs-head h2 { font-size:clamp(1.9rem,4.2vw,3.2rem); }
+.jobs-head p { margin:.4em 0 .8em; max-width:62ch; color:#B9B3B0; font-size:clamp(.9rem,1.4vw,1.05rem); }
+.level { height:6px; border-radius:3px; background:#26302b; max-width:420px; overflow:hidden; } .level-fill { height:100%; background:var(--sage); transform-origin:0 50%; transform:scaleX(.25); }
+.job-stack { position:relative; flex:1; min-height:0; }
+.job { position:absolute; inset:0 0 6px 0; display:grid; grid-template-columns:minmax(260px,.36fr) 1fr; gap:clamp(16px,3vw,40px); background:var(--ink-2); border:1px solid #2f3a35; border-radius:14px; padding:clamp(16px,3vw,36px); box-shadow:6px 8px 0 rgba(0,0,0,.55); overflow:hidden; }
+.job-side { display:flex; flex-direction:column; justify-content:space-between; }
+.job-n { font-size:1rem; color:var(--sage); font-weight:600; } .job-n small { color:#B9B3B0; font-weight:400; }
+.job-industry { margin:0; font-family:var(--serif); font-style:italic; font-size:clamp(2rem,3.3vw,2.8rem); line-height:1; color:var(--blush); }
+.job h3 { margin:0; font-family:var(--sans); font-weight:600; font-size:clamp(1.15rem,2.2vw,1.6rem); }
+.job-meta { margin:.2em 0 .9em; color:var(--sage); font-size:.95rem; }
+.job ul { margin:0 0 .9em; padding-left:1.1em; display:grid; gap:.45em; font-size:clamp(.88rem,1.35vw,1.05rem); }
+.learning { margin:.2em 0 .8em; padding:.6em .9em; border-left:3px solid var(--blush); background:#1d2723; font-size:clamp(.88rem,1.35vw,1.05rem); } .learning b { color:var(--blush); }
+.steps { list-style:none; margin:auto 0 0; padding:0; display:flex; flex-wrap:wrap; gap:6px 18px; font-size:.85rem; color:var(--paper); }
+.step::before { content:''; display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--sage); margin-right:7px; }
+.job-main { display:flex; flex-direction:column; min-height:0; }
+
+/* 3. Certificates */
+.certs { padding:clamp(72px,12vh,140px) 24px; max-width:1100px; margin:0 auto; }
+.certs-head p { max-width:56ch; color:#B9B3B0; font-size:1.1rem; margin:.6em 0 0; }
+.board { margin-top:clamp(28px,5vw,56px); display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(22px,3.4vw,44px); padding:clamp(18px,3vw,40px); border-radius:16px; background:#151d19 radial-gradient(circle at 20% 10%, #1b2520, transparent 60%); border:1px solid #26302b; }
+.cert { position:relative; background:var(--paper); color:var(--ink); padding:clamp(22px,2.6vw,34px) clamp(20px,2.4vw,30px) clamp(20px,2.4vw,30px); border-radius:3px; box-shadow:5px 7px 0 rgba(0,0,0,.55); }
+.cert h3 { margin:.1em 0 .45em; font-family:var(--serif); font-style:italic; font-weight:400; font-size:clamp(1.5rem,2.6vw,2.1rem); line-height:1.1; }
+.cert p { margin:0; font-size:.98rem; } .cert-issuer { font-weight:600; font-size:.82rem !important; letter-spacing:.06em; text-transform:uppercase; color:#3f5a4d; }
+.pin { position:absolute; top:-9px; left:50%; width:18px; height:18px; margin-left:-9px; border-radius:50%; background:var(--blush); box-shadow:0 0 0 3px var(--paper), 2px 4px 0 rgba(0,0,0,.45); }
+
+@media (max-width:700px) {
+  .places-body { gap:16px; } .dot { left:-26px; }
+  .jobs-inner { padding:92px 16px 20px; }
+  .job { grid-template-columns:1fr; grid-template-rows:auto 1fr; gap:10px; padding:16px; overflow-y:auto; }
+  .job-side { flex-direction:row; align-items:baseline; gap:12px; } .job-industry { font-size:2.2rem; }
+  .jobs-head p { display:none; }
+  .board { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .places, .jobs { height:auto; overflow:visible; } .places-inner { padding:96px 24px; }
+  .jobs-inner { height:auto; } .job-stack { display:grid; gap:24px; } .job { position:relative; inset:auto; } .level { display:none; }
+}
+/* Current role: third step stays dim in both motion modes. */
+.job:last-child .step:last-child { opacity:.3; }

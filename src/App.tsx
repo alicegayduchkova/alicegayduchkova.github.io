@@ -2,7 +2,9 @@ import { useEffect } from 'react'
 import { initLenis, ScrollTrigger } from './lib/scroll'
 import Header from './components/Header'
 import Landing from './scenes/Landing'
-import { about } from './content/copy'
+import Places from './chapters/Places'
+import Jobs from './chapters/Jobs'
+import Certificates from './chapters/Certificates'
 
 export default function App() {
   useEffect(() => {
@@ -16,8 +18,9 @@ export default function App() {
       <Header />
       <main id="top">
         <Landing />
-        {/* Chapter 1 stub: replaced in stage 3 */}
-        <section className="stub"><h2>{about.headline}</h2></section>
+        <Places />
+        <Jobs />
+        <Certificates />
       </main>
     </>
   )
