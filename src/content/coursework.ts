@@ -109,3 +109,25 @@ export const goals = {
     ['Fidelity: How much do I need to retire?', 'https://www.fidelity.com/viewpoints/retirement/how-much-do-i-need'],
   ] as [string, string][],
 }
+
+// ---------- A.I.M. (from aimsociety.org, About page). Wording is the club's own. ----------
+export const aim = {
+  eyebrow: 'Leadership',
+  name: 'A.I.M.',
+  full: 'Artificial Intelligence Multidisciplinary Society',
+  role: 'Director of Operations',
+  since: '2026 to present',
+  founded: 'Founded April 2026 at UMass Lowell',
+  mine: "I help run operations for UMass Lowell's AI club, where students from every major build AI projects together.",
+  who: [
+    'AIM connects students from all majors with AI. We believe everyone should have the chance to understand and shape its future, regardless of major.',
+    'We aim to bridge the gap between the future of AI and the UMass Lowell academic community. Through workshops, speaker events, and collaborative projects, students learn and debate responsible use of AI, build industry connections, and develop AI skills relevant to their careers.',
+  ],
+  pillars: [
+    ['01', 'Explore', 'Understand AI from your vantage point', "You don't need a technical background to understand AI and how it works, who it affects, or when it should be used. AIM gives you a space to explore it on your own terms."],
+    ['02', 'Build', 'Work on real, cross-disciplinary projects', 'Our projects are collaborative efforts that require domain expertise from multiple fields, expertise that lives outside CS departments.'],
+    ['03', 'Engage', 'Connect and communicate across the university', "AI's most pressing questions are social, political, ethical, and environmental, not just technical. AIM is the place where that conversation can happen at UMass Lowell."],
+    ['04', 'Connect', 'Access opportunities beyond campus', 'As a part of the Massachusetts AI Coalition, AIM connects students with industry leaders, researchers, and organizations across Massachusetts, creating opportunities to network and get involved in real-world AI work.'],
+  ] as [string, string, string, string][],
+  link: { href: 'https://aimsociety.org', label: 'aimsociety.org' },
+}

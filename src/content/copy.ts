@@ -111,8 +111,6 @@ export const school = {
   story:
     "I spent my first year of college as a Division II swimmer at Assumption University, then transferred to UMass Lowell, where I study business administration with concentrations in finance and business analytics. On my own I've taken courses on markets through Bloomberg, on telling stories with data, and on quantum computing and security. Outside of work and class, I love to sew, work out, and hang out with my friends.",
   list: [
-    { name: 'A.I.M.', full: 'Artificial Intelligence Multidisciplinary Society', role: 'Director of Operations',
-      text: "UMass Lowell's AI club, where students from every major work together on real AI projects. I help run the club's operations.", link: { href: 'https://aimsociety.org', label: 'aimsociety.org' } },
     { name: 'Manning School of Business', full: 'UMass Lowell', role: 'B.S. Business Administration',
       courses: 'Financial Portfolio and Analysis, Financial Markets and Institutions, Marketing, Intro to Business Analytics, Business Information Systems, Microeconomics, Statistics' },
     { name: 'Assumption University', full: 'Worcester, MA', role: 'NCAA Division II Swimming, 2024 – 2025. Transferred to UMass Lowell as a sophomore.',
