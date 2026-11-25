@@ -18,6 +18,7 @@ export default function Jobs() {
           if (i === 0) return
           const t = i * 1.2
           tl.fromTo(cards[i - 1], { scale: 1, yPercent: 0, filter: 'brightness(1)' }, { scale: 0.92, yPercent: -6, filter: 'brightness(0.55)', duration: 1, ease: 'power2.inOut' }, t)
+          tl.to(cards[i - 1], { opacity: 0, duration: 0.12 }, t + 0.88)
           tl.to(card, { opacity: 1, duration: 0.1 }, t)
           tl.to(card, { yPercent: 0, rotation: 0, duration: 1, ease: 'power2.inOut' }, t)
           tl.to('.level-fill', { scaleX: (i + 1) / cards.length, duration: 1, ease: 'power2.inOut' }, t)
@@ -43,24 +44,23 @@ export default function Jobs() {
         <div className="job-stack">
           {jobs.list.map((j, i) => (
             <article className="job" key={j.org} style={{ zIndex: i + 1 }}>
-              <div className="job-side">
-                <span className="job-n">{String(i + 1).padStart(2, '0')}<small> / 04</small></span>
+              <div className="job-top">
                 <img className="job-logo" src={j.logo.src} alt={j.logo.alt} width={j.logo.w} height={j.logo.h} loading="lazy" decoding="async" />
-                <dl className="job-facts">
-                  <div><dt>When</dt><dd>{j.when}</dd></div>
-                  <div><dt>Where</dt><dd>{j.where}</dd></div>
-                </dl>
-                <p className="job-industry">{j.industry}</p>
-              </div>
-              <div className="job-main">
-                <h3>{j.role}</h3>
-                <p className="job-org">{j.org}</p>
-                <ul className={`job-bullets${j.bullets.length === 1 ? ' is-lead' : ''}`}>{j.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
-                {'learning' in j && j.learning && <p className="learning"><b>What I'm learning:</b> {j.learning}</p>}
-                <div className="job-tags">
-                  <p className="tags-label">What I worked with</p>
-                  <ul>{j.tags.map((t) => <li key={t}>{t}</li>)}</ul>
+                <div className="job-head">
+                  <p className="job-meta"><span className="job-n">{String(i + 1).padStart(2, '0')}<small> / 04</small></span><span className="job-industry">{j.industry}</span></p>
+                  <h3>{j.role}</h3>
+                  <p className="job-org">{j.org}</p>
+                  <dl className="job-facts">
+                    <div><dt>When</dt><dd>{j.when}</dd></div>
+                    <div><dt>Where</dt><dd>{j.where}</dd></div>
+                  </dl>
                 </div>
+              </div>
+              <ul className="job-bullets">{j.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
+              {'learning' in j && j.learning && <p className="learning"><b>What I'm learning:</b> {j.learning}</p>}
+              <div className="job-tags">
+                <p className="tags-label">What I worked with</p>
+                <ul>{j.tags.map((t) => <li key={t}>{t}</li>)}</ul>
               </div>
             </article>
           ))}

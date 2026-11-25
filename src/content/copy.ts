@@ -155,4 +155,4 @@ export const contact = {
   email: 'alicegayduchkova@gmail.com',
   links: { talk: "Let's talk", resume: 'View my résumé', linkedin: 'LinkedIn' },
 }
-export const footer = 'Alisa (Alice) Gayduchkova, Shrewsbury, Massachusetts. Project figures come from coursework and are not investment advice.'
+export const footer = '© 2026 Alisa Gayduchkova'
