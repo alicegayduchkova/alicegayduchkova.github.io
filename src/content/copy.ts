@@ -24,28 +24,40 @@ export const places = {
     'I grew up across a few different countries and cultures before my family settled in Massachusetts in 2018. Living in different places taught me to adapt fast, get comfortable with new people, and see things from more than one point of view.',
 }
 
-// Chapter 2. Chronological (copy.md lists newest first).
+// Chapter 2. Chronological (copy.md lists newest first). Bullets, dates and places follow resume.pdf, which is more detailed than copy.md.
+const logo = (src: string, alt: string) => ({ src, alt, w: 640, h: 400 })
+export const resume = {
+  summary:
+    'Finance and Business Analytics student graduating in May 2028 with direct experience supporting financial advisors, shareholders, and beneficiaries at Franklin Templeton / Putnam Investments. Skilled in consultative client communication, mutual fund account servicing, sales support, research, and handling time-sensitive requests with accuracy and care.',
+}
 export const jobs = {
   title: "Where I've worked",
   intro: 'Four roles so far, from solar sales to mutual funds. Each one brought me closer to working with clients in finance.',
   story:
-    'Since 2024 I’ve held four jobs in four different industries: solar, manufacturing, marketing, and now mutual funds. Each time I started out knowing very little, figured it out, and then made it clear for the next person. That last part is why I like working with clients.',
+    'Since 2024 I\u2019ve held four jobs in four different industries: solar, manufacturing, marketing, and now mutual funds. Each time I started out knowing very little, figured it out, and then made it clear for the next person. That last part is why I like working with clients.',
   list: [
-    { industry: 'Solar', role: 'Solar Panel Sales Assistant', org: 'Sunrun', logo: { src: '/logos/sunrun.webp', alt: 'Sunrun logo', w: 320, h: 320 }, when: 'Jun – Aug 2024', where: 'Worcester, MA', bullets: [
-      'Walked customers through solar products, pricing, and installation so they understood their options.',
-      'Prepared proposals and quotes, and helped the sales team generate leads and follow up.'] },
-    { industry: 'Manufacturing', role: 'Business Analytics Intern', org: 'IPG Photonics', logo: { src: '/logos/ipg-photonics.webp', alt: 'IPG Photonics logo', w: 960, h: 240 }, when: 'Jun – Dec 2025', where: 'Marlborough, MA', bullets: [
-      'Interviewed staff to write standard operating procedures and built them into the production database.',
-      'Created ticketing systems in Ivanti for facilities and in Jira for diode assembly.',
-      'Validated production-time data on human and manufacturing errors for a company audit.'] },
-    { industry: 'Marketing', role: 'Marketing Intern', org: '52 Launch', logo: { src: '/logos/52-launch.webp', alt: '52 Launch logo', w: 320, h: 297 }, when: 'Feb – May 2026', where: 'Framingham, MA', bullets: [
-      'Supported lead-generation campaigns, working closely with sales to improve outreach.',
-      'Increased social media engagement with short-form video and interactive polls.',
-      'Analyzed competitor brands to find gaps and sharpen messaging.'] },
-    { industry: 'Mutual funds', role: 'Client Representative Intern', org: 'Franklin Templeton / Putnam Investments', logo: { src: '/logos/franklin-templeton.webp', alt: 'Franklin Templeton Investments logo', w: 720, h: 395 }, when: 'Jun 2026 – present', where: '', bullets: [
-      'Handle inbound calls from financial advisors, shareholders, and beneficiaries about mutual fund accounts.',
-      'Explain purchases, redemptions, exchanges, and account transfers, along with share classes, fees, and minimum investments.',
-      'Guide beneficiaries through trust and inheritance paperwork with patience and clear next steps.'],
+    { industry: 'Solar', role: 'Solar Panel Sales Assistant', org: 'Sunrun', logo: logo('/logos/sunrun.webp', 'Sunrun logo'), when: 'Jun 2024 \u2013 Aug 2024', where: 'Worcester, MA',
+      bullets: ['Explained solar products, pricing, and installation options; prepared sales documents, proposals, and quotes and followed up on customer inquiries.'],
+      tags: ['Solar products', 'Pricing', 'Installation options', 'Proposals and quotes', 'Customer follow-up'] },
+    { industry: 'Manufacturing', role: 'Business Analytics Intern', org: 'IPG Photonics Corporation', logo: logo('/logos/ipg-photonics.webp', 'IPG Photonics logo'), when: 'Jun 2025 \u2013 Dec 2025', where: 'Marlborough, MA',
+      bullets: [
+        'Interviewed staff to write standard operating procedures and built them into the in-house production database.',
+        'Created ticketing systems in Ivanti for Facilities and in Jira for the Diode Assembly department.',
+        'Stacked and validated production-time data on human and manufacturing errors to support a company audit.'],
+      tags: ['Standard operating procedures', 'Production database', 'Ivanti', 'Jira', 'Data validation', 'Company audit'] },
+    { industry: 'Marketing', role: 'Marketing Intern', org: '52 Launch', logo: logo('/logos/52-launch.webp', '52 Launch logo'), when: 'Feb 2026 \u2013 May 2026', where: 'Framingham, MA',
+      bullets: [
+        'Supported cross-functional lead-generation campaigns, working closely with sales to improve outreach.',
+        'Increased social media engagement by introducing short-form video content and interactive polls.',
+        'Analyzed competitor brands to identify trends and gaps, informing content strategy and brand messaging.'],
+      tags: ['Lead generation', 'Sales outreach', 'Short-form video', 'Interactive polls', 'Competitor analysis', 'Brand messaging'] },
+    { industry: 'Mutual funds', role: 'Client Representative Intern', org: 'Franklin Templeton / Putnam Investments', logo: logo('/logos/franklin-templeton.webp', 'Franklin Templeton Investments logo'), when: 'Jun 2026 \u2013 Present', where: 'Remote',
+      bullets: [
+        'Serve as a first point of contact for financial advisors, shareholders, and beneficiaries on inbound calls, building rapport and resolving mutual fund account questions in real time.',
+        'Explain purchases, redemptions, exchanges, transfers, share classes, and fees in plain language, within a nonadvisory role.',
+        'Guide beneficiaries through trust and inheritance paperwork after the loss of a loved one, keeping sensitive conversations calm, patient, and focused on next steps.',
+        'Manage back-to-back calls and time-sensitive advisor requests while staying accurate, compliant, and professional.'],
+      tags: ['Inbound calls', 'Mutual fund accounts', 'Purchases and redemptions', 'Exchanges and transfers', 'Share classes and fees', 'Trust and inheritance paperwork'],
       learning: 'how to stay calm and precise when an advisor or client needs an answer right now.' },
   ],
 }
@@ -58,7 +70,7 @@ export const certs = {
     { title: 'Bloomberg Market Concepts', issuer: 'Bloomberg', date: '', text: 'A self-paced course built on the Bloomberg Terminal covering economic indicators, currencies, fixed income, and equities, and how each one moves markets.' },
     { title: 'The Business Intelligence Analyst Course', issuer: 'Udemy', date: 'Dec 2025', text: 'How analysts turn raw company data into reports and dashboards: preparing and cleaning data, working in Excel, querying databases, and building visualizations.' },
     { title: 'How to Tell a Story with Data', issuer: 'Udemy', date: 'Dec 2025', text: 'Choosing the right chart, cutting the clutter, and building a clear message so the people making decisions see what matters.' },
-    { title: 'Quantum Computing Risk and Security', issuer: 'Udemy', date: 'Dec 2025', text: "What quantum computers are, why they could break today's encryption, and how organizations like banks are preparing for it." },
+    { title: 'The Quantum Computing Risk and Security Masterclass', issuer: 'Udemy', date: 'Dec 2025', text: "What quantum computers are, why they could break today's encryption, and how organizations like banks are preparing for it." },
   ],
 }
 
@@ -99,8 +111,8 @@ export const school = {
     { name: 'A.I.M.', full: 'Artificial Intelligence Multidisciplinary Society', role: 'Director of Operations',
       text: "UMass Lowell's AI club, where students from every major work together on real AI projects. I help run the club's operations.", link: { href: 'https://aimsociety.org', label: 'aimsociety.org' } },
     { name: 'Manning School of Business', full: 'UMass Lowell', role: 'B.S. Business Administration',
-      courses: 'Financial Portfolio and Analysis, Financial Markets and Institutions, Marketing, Business Analytics, Business Information Systems, Statistics, Microeconomics' },
-    { name: 'Assumption University', full: '', role: 'NCAA Division II Swimming, 2024 – 2025',
+      courses: 'Financial Portfolio and Analysis, Financial Markets and Institutions, Marketing, Intro to Business Analytics, Business Information Systems, Microeconomics, Macroeconomics, Statistics' },
+    { name: 'Assumption University', full: 'Worcester, MA', role: 'NCAA Division II Swimming, 2024 – 2025. Transferred to UMass Lowell as a sophomore.',
       courses: 'Principles of Accounting I, Principles of Accounting II' },
   ],
 }
@@ -129,8 +141,8 @@ export const timeline = {
 export const skills = {
   title: 'What I use at work and in class.',
   groups: [
-    { name: 'Finance and clients', items: ['Mutual fund servicing', 'Share classes and fees', 'Advisor communication', 'Trust and beneficiary paperwork', 'Company research', 'Sales support'] },
-    { name: 'Data and analytics', items: ['Excel', 'Data validation', 'KPIs', 'Data visualization', 'Return and risk calculations'] },
+    { name: 'Finance and clients', items: ['Mutual fund servicing', 'Share classes and fees', 'Advisor communication', 'Trust and beneficiary documentation', 'Company research', 'Sales support'] },
+    { name: 'Data and analytics', items: ['Data analysis', 'Excel', 'Data validation', 'KPIs', 'Data visualization', 'Return and risk calculations'] },
     { name: 'Tools and process', items: ['Microsoft Office', 'Jira', 'Ivanti', 'SOP writing', 'ISO 9001'] },
   ],
 }

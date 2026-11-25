@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from 'react'
 import { gsap } from '../lib/scroll'
-import { skills, contact, hero } from '../content/copy'
+import { skills, contact, hero, resume } from '../content/copy'
 
 const tilt = [-1.6, 1.2, -0.8, 1.8, -1.2, 0.9]
 
@@ -23,6 +23,7 @@ export default function SkillsContact() {
     <div ref={root}>
       <section className="chapter skills" id="skills" aria-labelledby="skills-h">
         <h2 id="skills-h">{skills.title}</h2>
+        <p className="skills-summary">{resume.summary}</p>
         <div className="clusters">
           {skills.groups.map((g) => (
             <div className="cluster" key={g.name}>

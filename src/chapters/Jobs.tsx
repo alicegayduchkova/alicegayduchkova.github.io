@@ -8,8 +8,9 @@ export default function Jobs() {
     const el = root.current!
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia()
-      mm.add('(prefers-reduced-motion: no-preference)', () => {
-        const cards = gsap.utils.toArray<HTMLElement>('.job', el)
+      const cards = gsap.utils.toArray<HTMLElement>('.job', el)
+      // Desktop: pinned stack where each job levels up into the next.
+      mm.add('(prefers-reduced-motion: no-preference) and (min-width: 901px)', () => {
         const tl = gsap.timeline({ defaults: { ease: 'none' },
           scrollTrigger: { trigger: el, start: 'top top', end: `+=${cards.length * 90}%`, pin: true, scrub: 0.6, anticipatePin: 1 } })
         gsap.set(cards.slice(1), { yPercent: 110, rotation: 2, opacity: 0 })
@@ -22,6 +23,10 @@ export default function Jobs() {
           tl.to('.level-fill', { scaleX: (i + 1) / cards.length, duration: 1, ease: 'power2.inOut' }, t)
         })
         tl.to({}, { duration: 0.6 })
+      })
+      // Phones and tablets: cards stack in normal flow and rise into view.
+      mm.add('(prefers-reduced-motion: no-preference) and (max-width: 900px)', () => {
+        cards.forEach((c) => gsap.from(c, { opacity: 0, y: 40, ease: 'power2.out', scrollTrigger: { trigger: c, start: 'top 92%', end: 'top 68%', scrub: 0.5 } }))
       })
     }, el)
     return () => ctx.revert()
@@ -41,13 +46,21 @@ export default function Jobs() {
               <div className="job-side">
                 <span className="job-n">{String(i + 1).padStart(2, '0')}<small> / 04</small></span>
                 <img className="job-logo" src={j.logo.src} alt={j.logo.alt} width={j.logo.w} height={j.logo.h} loading="lazy" decoding="async" />
+                <dl className="job-facts">
+                  <div><dt>When</dt><dd>{j.when}</dd></div>
+                  <div><dt>Where</dt><dd>{j.where}</dd></div>
+                </dl>
                 <p className="job-industry">{j.industry}</p>
               </div>
               <div className="job-main">
                 <h3>{j.role}</h3>
-                <p className="job-meta">{j.org} · {j.when}{j.where ? ` · ${j.where}` : ''}</p>
-                <ul>{j.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
-                {j.learning && <p className="learning"><b>What I'm learning:</b> {j.learning}</p>}
+                <p className="job-org">{j.org}</p>
+                <ul className={`job-bullets${j.bullets.length === 1 ? ' is-lead' : ''}`}>{j.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
+                {'learning' in j && j.learning && <p className="learning"><b>What I'm learning:</b> {j.learning}</p>}
+                <div className="job-tags">
+                  <p className="tags-label">What I worked with</p>
+                  <ul>{j.tags.map((t) => <li key={t}>{t}</li>)}</ul>
+                </div>
               </div>
             </article>
           ))}
