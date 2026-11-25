@@ -12,11 +12,12 @@ export default function Jobs() {
         const cards = gsap.utils.toArray<HTMLElement>('.job', el)
         const tl = gsap.timeline({ defaults: { ease: 'none' },
           scrollTrigger: { trigger: el, start: 'top top', end: `+=${cards.length * 90}%`, pin: true, scrub: 0.6, anticipatePin: 1 } })
-        gsap.set(cards.slice(1), { yPercent: 110, rotation: 2 })
+        gsap.set(cards.slice(1), { yPercent: 110, rotation: 2, opacity: 0 })
         cards.forEach((card, i) => {
           if (i === 0) return
           const t = i * 1.2
-          tl.to(cards[i - 1], { scale: 0.92, yPercent: -6, opacity: 0.35, duration: 1, ease: 'power2.inOut' }, t)
+          tl.to(cards[i - 1], { scale: 0.92, yPercent: -6, filter: 'brightness(0.55)', duration: 1, ease: 'power2.inOut' }, t)
+          tl.to(card, { opacity: 1, duration: 0.1 }, t)
           tl.to(card, { yPercent: 0, rotation: 0, duration: 1, ease: 'power2.inOut' }, t)
           tl.to('.level-fill', { scaleX: (i + 1) / cards.length, duration: 1, ease: 'power2.inOut' }, t)
         })

@@ -6,6 +6,10 @@ import Places from './chapters/Places'
 import Jobs from './chapters/Jobs'
 import Certificates from './chapters/Certificates'
 import Projects from './chapters/Projects'
+import School from './chapters/School'
+import Timeline from './chapters/Timeline'
+import SkillsContact from './chapters/SkillsContact'
+import Footer from './components/Footer'
 
 export default function App() {
   useEffect(() => {
@@ -23,7 +27,11 @@ export default function App() {
         <Jobs />
         <Certificates />
         <Projects />
+        <School />
+        <Timeline />
+        <SkillsContact />
       </main>
+      <Footer />
     </>
   )
 }

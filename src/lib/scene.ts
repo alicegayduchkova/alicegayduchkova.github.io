@@ -10,8 +10,8 @@ export function useScene(ref: RefObject<HTMLElement | null>, build: Build, deskt
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia()
       const make = (st: ScrollTrigger.Vars) => build(gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { scrub: 0.6, invalidateOnRefresh: true, ...st } }), el)
-      mm.add('(prefers-reduced-motion: no-preference) and (min-width: 701px)', () => make({ trigger: el, start: 'top top', end: desktopEnd, pin: true, anticipatePin: 1 }))
-      mm.add('(prefers-reduced-motion: no-preference) and (max-width: 700px)', () => make({ trigger: el.querySelector('.scene-visual')!, start: 'top 75%', end: '+=90%' }))
+      mm.add('(prefers-reduced-motion: no-preference) and (min-width: 901px)', () => make({ trigger: el, start: 'top top', end: desktopEnd, pin: true, anticipatePin: 1 }))
+      mm.add('(prefers-reduced-motion: no-preference) and (max-width: 900px)', () => make({ trigger: el.querySelector('.scene-visual')!, start: 'top 75%', end: '+=90%' }))
     }, el)
     return () => ctx.revert()
     // eslint-disable-next-line react-hooks/exhaustive-deps

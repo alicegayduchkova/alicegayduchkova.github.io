@@ -88,3 +88,56 @@ export const projects = {
     takeaway: 'Money you need soon calls for stability. Money you need in twenty years can take on more risk for growth.',
   },
 }
+
+// Chapter 5 (verbatim)
+export const school = {
+  title: 'My time at UMass Lowell',
+  intro: "Business administration with concentrations in finance and business analytics, graduating May 2028. Here's where I spend my time outside class.",
+  story:
+    "I spent my first year of college as a Division II swimmer at Assumption University, then transferred to UMass Lowell, where I study business administration with concentrations in finance and business analytics. On my own I've taken courses on markets through Bloomberg, on telling stories with data, and on quantum computing and security. Outside of work and class, I love to sew, work out, and hang out with my friends.",
+  list: [
+    { name: 'A.I.M.', full: 'Artificial Intelligence Multidisciplinary Society', role: 'Director of Operations',
+      text: "UMass Lowell's AI club, where students from every major work together on real AI projects. I help run the club's operations.", link: { href: 'https://aimsociety.org', label: 'aimsociety.org' } },
+    { name: 'Manning School of Business', full: 'UMass Lowell', role: 'B.S. Business Administration',
+      courses: 'Financial Portfolio and Analysis, Financial Markets and Institutions, Marketing, Business Analytics, Business Information Systems, Statistics, Microeconomics' },
+    { name: 'Assumption University', full: '', role: 'NCAA Division II Swimming, 2024 – 2025',
+      courses: 'Principles of Accounting I, Principles of Accounting II' },
+  ],
+}
+
+export const timeline = {
+  title: 'Working while I study',
+  intro: 'Four roles since 2024, from solar sales support to mutual fund servicing, alongside school.',
+  tracks: { life: 'Life and school', career: 'Career' },
+  // Chronological. Track assignment is mine (copy.md lists them in one flat list).
+  items: [
+    { when: '2018', track: 'life', text: 'Moved to Massachusetts. After growing up across three other countries.' },
+    { when: 'Summer 2024', track: 'career', text: 'Solar Panel Sales Assistant, Sunrun' },
+    { when: 'Fall 2024', track: 'life', text: 'Division II swimmer, Assumption University, first year of college' },
+    { when: 'Jun – Dec 2025', track: 'career', text: 'Business Analytics Intern, IPG Photonics' },
+    { when: 'Fall 2025', track: 'life', text: 'Transferred to UMass Lowell (Manning School of Business, as a sophomore)' },
+    { when: 'Dec 2025', track: 'life', text: 'Three Udemy certificates (business intelligence, data storytelling, quantum risk)' },
+    { when: 'Feb – May 2026', track: 'career', text: 'Marketing Intern, 52 Launch' },
+    { when: '2026', track: 'career', text: "Director of Operations, A.I.M., UMass Lowell's AI club" },
+    { when: 'Jun 2026 – present', track: 'career', text: 'Client Representative Intern, Franklin Templeton / Putnam Investments' },
+    { when: '2026', track: 'life', text: 'Bloomberg Market Concepts (Bloomberg certificate)' },
+    { when: 'May 2028', track: 'life', text: 'Graduating. B.S. Business Administration, finance and business analytics' },
+  ] as { when: string; track: 'life' | 'career'; text: string }[],
+}
+
+// Chapter 6 (verbatim)
+export const skills = {
+  title: 'What I use at work and in class.',
+  groups: [
+    { name: 'Finance and clients', items: ['Mutual fund servicing', 'Share classes and fees', 'Advisor communication', 'Trust and beneficiary paperwork', 'Company research', 'Sales support'] },
+    { name: 'Data and analytics', items: ['Excel', 'Data validation', 'KPIs', 'Data visualization', 'Return and risk calculations'] },
+    { name: 'Tools and process', items: ['Microsoft Office', 'Jira', 'Ivanti', 'SOP writing', 'ISO 9001'] },
+  ],
+}
+export const contact = {
+  title: 'Get in touch',
+  text: 'Want to talk about my work or anything on this page? Email is the fastest way to reach me.',
+  email: 'alicegayduchkova@gmail.com',
+  links: { talk: "Let's talk", resume: 'View my résumé', linkedin: 'LinkedIn' },
+}
+export const footer = 'Alisa (Alice) Gayduchkova, Shrewsbury, Massachusetts. Project figures come from coursework and are not investment advice.'
