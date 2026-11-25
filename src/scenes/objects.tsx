@@ -22,6 +22,12 @@ export const objects: Obj[] = [
     <rect x="22" y="14" width="76" height="14" rx="5" fill="#EDE7E4" {...edge} /><rect x="22" y="94" width="76" height="14" rx="5" fill="#EDE7E4" {...edge} />
     <path d="M34 40H86M34 54H86M34 68H86M34 82H86" {...line} />
   </>) },
+  { id: 'scissors', caption: 'Also sewing', title: `More sewing`, text: `Scissors to go with the thread. I love to sew, and it's one of the things I make time for outside of work and class.`, depth: 0.75, x: 15, y: 64, mx: 0, my: 0, rot: -28, size: 1, art: (<>
+    <path d="M60 64 30 14M60 64 90 14" stroke={P} strokeWidth="14" strokeLinecap="round" />
+    <path d="M60 64 30 14M60 64 90 14" stroke="#B9B3B0" strokeWidth="6" strokeLinecap="round" />
+    <circle cx="42" cy="92" r="14" fill="none" stroke={P} strokeWidth="12" /><circle cx="42" cy="92" r="14" fill="none" stroke="#E7B8AE" strokeWidth="6" />
+    <circle cx="78" cy="92" r="14" fill="none" stroke={P} strokeWidth="12" /><circle cx="78" cy="92" r="14" fill="none" stroke="#E7B8AE" strokeWidth="6" />
+  </>) },
   { id: 'dumbbell', caption: 'Working out', title: `Working out`, text: `Working out is the other thing I make time for outside of work and class, along with sewing and spending time with friends.`, depth: 0.5, x: 8, y: 52, mx: 14, my: 80, rot: 20, size: 1.1, mobile: true, art: (<>
     <rect x="36" y="52" width="48" height="16" fill="#B9B3B0" {...edge} />
     <rect x="16" y="34" width="20" height="52" rx="5" fill={INK} {...edge} /><rect x="84" y="34" width="20" height="52" rx="5" fill={INK} {...edge} />
@@ -51,7 +57,7 @@ export const objects: Obj[] = [
     <rect x="34" y="20" width="52" height="20" rx="2" fill={INK} />
     {[0,1,2].flatMap(r => [0,1,2].map(c => <rect key={r*3+c} x={34+c*18} y={50+r*18} width="14" height="12" rx="2" fill={INK} />))}
   </>) },
-  { id: 'notebook', caption: 'Class notes', title: `Class notes`, text: `I'm at UMass Lowell's Manning School of Business, studying business administration with concentrations in finance and business analytics. I graduate in May 2028.`, depth: 0.55, x: 14, y: 76, mx: 38, my: 80, rot: -6, size: 1.0, mobile: true, art: (<>
+  { id: 'notebook', caption: 'Class notes', title: `Class notes`, text: `I'm at UMass Lowell's Manning School of Business, studying business administration with concentrations in finance and business analytics. I graduate in May 2028.`, depth: 0.55, x: 13, y: 83, mx: 38, my: 80, rot: -6, size: 1.0, mobile: true, art: (<>
     <rect x="22" y="12" width="76" height="98" rx="4" fill="#8FBFA9" {...edge} />
     <rect x="22" y="12" width="12" height="98" fill="#6FA38B" />
     <path d="M44 36H88M44 50H88M44 64H80" {...line} />
