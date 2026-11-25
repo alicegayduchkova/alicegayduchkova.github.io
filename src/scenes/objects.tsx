@@ -9,21 +9,18 @@ const line = { stroke: INK, strokeWidth: 2, strokeLinecap: 'round' as const, fil
 export type Obj = { id: string; caption: string; depth: number; x: number; y: number; rot: number; size: number; mobile?: boolean; art: ReactNode }
 
 export const objects: Obj[] = [
-  { id: 'swim', caption: 'Division II swimming, 2024–2025', depth: 0.9, x: 9, y: 16, rot: -12, size: 1.15, mobile: true, art: (<>
-    <path d="M14 82C12 28 108 28 106 82Z" fill="#E7B8AE" {...edge} />
-    <path d="M30 60C50 44 74 44 92 60" {...line} /><path d="M24 72C50 52 80 52 98 72" {...line} />
-    <circle cx="86" cy="94" r="12" fill="#8FBFA9" {...edge} /><circle cx="86" cy="94" r="6" fill={INK} />
+  { id: 'swim', caption: 'Division II swimming, 2024–2025', depth: 0.9, x: 9, y: 16, rot: -10, size: 1.2, mobile: true, art: (<>
+    <path d="M2 64H15M105 64H118" stroke={P} strokeWidth="15" strokeLinecap="round" />
+    <path d="M2 64H15M105 64H118" stroke="#2F4A63" strokeWidth="8" strokeLinecap="round" />
+    <rect x="48" y="58" width="24" height="9" rx="4" fill="#E7B8AE" {...edge} />
+    <circle cx="31" cy="64" r="23" fill="#E7B8AE" {...edge} /><circle cx="89" cy="64" r="23" fill="#E7B8AE" {...edge} />
+    <circle cx="31" cy="64" r="15" fill="#2F4A63" /><circle cx="89" cy="64" r="15" fill="#2F4A63" />
+    <path d="M22 58a11 11 0 0 1 8-5M80 58a11 11 0 0 1 8-5" stroke="#8FB3D1" strokeWidth="3" strokeLinecap="round" fill="none" />
   </>) },
   { id: 'thread', caption: 'I sew', depth: 0.6, x: 24, y: 72, rot: 8, size: 0.9, art: (<>
     <rect x="30" y="20" width="60" height="80" rx="6" fill="#8FBFA9" {...edge} />
     <rect x="22" y="14" width="76" height="14" rx="5" fill="#EDE7E4" {...edge} /><rect x="22" y="94" width="76" height="14" rx="5" fill="#EDE7E4" {...edge} />
     <path d="M34 40H86M34 54H86M34 68H86M34 82H86" {...line} />
-  </>) },
-  { id: 'scissors', caption: 'Also sewing', depth: 0.75, x: 33, y: 80, rot: -28, size: 1, art: (<>
-    <path d="M60 64 30 14M60 64 90 14" stroke={P} strokeWidth="14" strokeLinecap="round" />
-    <path d="M60 64 30 14M60 64 90 14" stroke="#B9B3B0" strokeWidth="6" strokeLinecap="round" />
-    <circle cx="42" cy="92" r="14" fill="none" stroke={P} strokeWidth="12" /><circle cx="42" cy="92" r="14" fill="none" stroke="#E7B8AE" strokeWidth="6" />
-    <circle cx="78" cy="92" r="14" fill="none" stroke={P} strokeWidth="12" /><circle cx="78" cy="92" r="14" fill="none" stroke="#E7B8AE" strokeWidth="6" />
   </>) },
   { id: 'dumbbell', caption: 'Working out', depth: 0.5, x: 6, y: 50, rot: 22, size: 1.1, mobile: true, art: (<>
     <rect x="36" y="52" width="48" height="16" fill="#B9B3B0" {...edge} />
