@@ -11,7 +11,7 @@ Personal portfolio for Alisa (Alice) Gayduchkova, served at alicegayduchkova.git
 - Don't break the live site: until the redesign is approved, root `index.html` is the current live page.
 - Keep `resume.pdf` and `photo.png` reachable at their current URLs.
 - Voice: casual, first person, conversational. No hype words.
-- Don't frame Alice as an "immigrant" or lead with Russia. List places she has lived neutrally.
+- Don't frame Alice as an "immigrant". List places she has lived neutrally. (Alice chose the order Russia, Kazakhstan, Canada, Massachusetts herself, so Russia leading is fine.)
 - Project figures are coursework. At Alice's request the footer is just "© 2026 Alisa Gayduchkova" (the investment-advice disclaimer was removed).
 - Verify visual work in a real browser (screenshots at several scroll positions, desktop and mobile) before saying it works.
 - Respect `prefers-reduced-motion`.

@@ -18,7 +18,7 @@ export const about = { headline: "New countries, new jobs, new systems. I've lea
 // Chapter 1. Listed alphabetically, then Massachusetts, so no place leads the list (CLAUDE.md).
 export const places = {
   headline: about.headline,
-  lived: ['Canada', 'Kazakhstan', 'Russia'],
+  lived: ['Russia', 'Kazakhstan', 'Canada'],
   home: { name: 'Massachusetts', note: 'home since 2018', sub: 'Shrewsbury, MA' },
   paragraph:
     'I grew up across a few different countries and cultures before my family settled in Massachusetts in 2018. Living in different places taught me to adapt fast, get comfortable with new people, and see things from more than one point of view.',
