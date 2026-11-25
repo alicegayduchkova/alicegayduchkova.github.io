@@ -61,3 +61,30 @@ export const certs = {
     { title: 'Quantum Computing Risk and Security', issuer: 'Udemy', date: 'Dec 2025', text: "What quantum computers are, why they could break today's encryption, and how organizations like banks are preparing for it." },
   ],
 }
+
+// Chapter 4 (verbatim). Figures are coursework, not investment advice.
+export const projects = {
+  title: 'Projects I worked on',
+  intro: 'Coursework where I researched companies, ran the numbers, and explained what they mean for an investor.',
+  erie: {
+    kind: 'Finance coursework, 2026',
+    title: 'Return and risk analysis of Erie Indemnity (ERIE)',
+    summary: 'I calculated six months of total returns for one Class A share, splitting each month into price change and dividend income, then measured how much the returns varied.',
+    avg: 0.03, sd: 11.07,
+    months: [['Mar', -7.41], ['Apr', -12.38], ['May', -1.56], ['Jun', 17.8], ['Jul', -4.39], ['Aug', 8.12]] as [string, number][],
+    source: 'Source: Prices and dividends from Yahoo Finance.',
+    takeaway: 'The average was close to zero, but single months swung from −12% to +18%. A flat average can hide a lot of risk, and a client needs that explained, not just reported.',
+  },
+  ft: {
+    kind: 'Company research, 2026',
+    title: 'Franklin Templeton vs. JPMorgan Chase',
+    summary: 'I compared an asset manager that earns most of its revenue from fees on the assets it manages with a diversified bank that also lends and offers wealth management. I looked at products, competitors, revenue and profit trends, and risks.',
+    takeaway: 'Fee revenue moves with markets and fund flows, so keeping advisors and their clients invested matters a great deal.',
+  },
+  horizon: {
+    kind: 'Financial planning coursework, 2026',
+    title: 'Matching investments to time horizon',
+    summary: 'I sorted financial goals into short, medium, and long term, set savings targets, then revised them after looking at affordability, financing, and retirement needs.',
+    takeaway: 'Money you need soon calls for stability. Money you need in twenty years can take on more risk for growth.',
+  },
+}

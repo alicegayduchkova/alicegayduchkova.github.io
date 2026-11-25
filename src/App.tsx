@@ -5,6 +5,7 @@ import Landing from './scenes/Landing'
 import Places from './chapters/Places'
 import Jobs from './chapters/Jobs'
 import Certificates from './chapters/Certificates'
+import Projects from './chapters/Projects'
 
 export default function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function App() {
         <Places />
         <Jobs />
         <Certificates />
+        <Projects />
       </main>
     </>
   )
