@@ -8,7 +8,7 @@ export default function Places() {
     const el = root.current!
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia()
-      mm.add('(prefers-reduced-motion: no-preference)', () => {
+      mm.add('(prefers-reduced-motion: no-preference) and (min-height: 640px)', () => {
         const items = gsap.utils.toArray<HTMLElement>('.place', el)
         const tl = gsap.timeline({ defaults: { ease: 'power2.out' },
           scrollTrigger: { trigger: el, start: 'top top', end: '+=180%', pin: true, scrub: 0.6, anticipatePin: 1 } })

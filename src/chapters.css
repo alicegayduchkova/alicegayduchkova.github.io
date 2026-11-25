@@ -48,10 +48,13 @@
   .job { padding:16px 22px; gap:12px; } .job-top { grid-template-columns:190px 1fr; } .job-bullets li { padding:9px 12px; font-size:.88rem; line-height:1.42; } .job-bullets { gap:10px; }
   .job-org { margin-bottom:.5em; } .learning { padding:.45em .8em; font-size:.88rem; }
 }
+/* Not tall enough to pin the stack (or narrow): cards flow down the page */
+@media (max-width:900px), (max-height:699px) {
+  .jobs { height:auto; overflow:visible; } .jobs-inner { height:auto; padding:72px 16px 32px; } .level { display:none; } .jobs-head p { display:block; }
+  .job-stack { display:grid; gap:22px; align-items:stretch; } .job { grid-area:auto; }
+}
 @media (max-width:900px) {
-  .jobs { height:auto; overflow:visible; } .jobs-inner { height:auto; padding:72px 16px 32px; } .level { display:none; }
-  .job-stack { display:grid; gap:22px; align-items:stretch; } .job { grid-area:auto; padding:16px; gap:16px; }
-  .job-top { grid-template-columns:1fr; gap:14px; } .job-logo { width:min(340px,100%); justify-self:center; }
+  .job { padding:16px; gap:16px; } .job-top { grid-template-columns:1fr; gap:14px; } .job-logo { width:min(340px,100%); justify-self:center; }
   .job-bullets { grid-template-columns:1fr; }
 }
 
@@ -68,6 +71,7 @@
   .places-body { gap:16px; } .dot { left:-26px; }
   .board { grid-template-columns:1fr; }
 }
+@media (max-height:639px) { .places { height:auto; overflow:visible; } .places-inner { padding:96px 24px 48px; } }
 @media (prefers-reduced-motion:reduce) {
   .places, .jobs { height:auto; overflow:visible; } .places-inner { padding:96px 24px; }
   .jobs-inner { height:auto; } .job-stack { display:grid; gap:24px; flex:none; align-items:stretch; } .job { grid-area:auto; } .level { display:none; }
@@ -120,8 +124,8 @@
 .th-dial { max-width:300px; margin:0 auto; width:100%; } .th-dial svg { width:100%; height:auto; display:block; } .needle line { stroke:var(--paper); stroke-width:3; stroke-linecap:round; } .needle circle { fill:var(--paper); }
 .dial-labels { display:flex; justify-content:space-between; font-size:.85rem; font-weight:600; margin-top:-6px; } .dial-labels span:first-child { color:var(--sage); } .dial-labels span:last-child { color:var(--blush); }
 
-@media (max-width:900px) {
-  .scene { height:auto; overflow:visible; padding:56px 16px 36px; grid-template-columns:1fr; grid-template-rows:none; grid-template-areas:'text' 'visual' 'take'; row-gap:18px; }
+@media (max-width:900px), (max-height:699px) {
+  .scene { height:auto; overflow:visible; width:min(820px,100%); padding:56px 16px 36px; grid-template-columns:1fr; grid-template-rows:none; grid-template-areas:'text' 'visual' 'take'; row-gap:18px; }
   .chart .ax { font-size:14px; } .chart .lbl { font-size:15px; } .chart svg, .ft-card svg { max-height:none; }
 }
 @media (max-width:700px) {
@@ -220,3 +224,10 @@
   .compare { font-size:.84rem; margin-bottom:.6em; }
 }
 .th-dial { margin:.4em 0 0; }
+
+/* Short desktop screens: tighter Places chapter so it still fits while pinned */
+@media (min-width:901px) and (max-height:820px) {
+  .places-inner { padding-top:76px; padding-bottom:20px; gap:14px; }
+  .places h2 { font-size:clamp(2rem,4vw,3rem); } .place-name { font-size:clamp(1.5rem,3.2vw,2.3rem); } .place-home .place-name { font-size:clamp(1.8rem,3.8vw,2.7rem); }
+  .place-list { gap:6px; } .places-note { font-size:.95rem; }
+}

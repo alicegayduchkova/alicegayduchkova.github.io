@@ -10,7 +10,7 @@ export default function Jobs() {
       const mm = gsap.matchMedia()
       const cards = gsap.utils.toArray<HTMLElement>('.job', el)
       // Desktop: pinned stack where each job levels up into the next.
-      mm.add('(prefers-reduced-motion: no-preference) and (min-width: 901px)', () => {
+      mm.add('(prefers-reduced-motion: no-preference) and (min-width: 901px) and (min-height: 700px)', () => {
         const tl = gsap.timeline({ defaults: { ease: 'none' },
           scrollTrigger: { trigger: el, start: 'top top', end: `+=${cards.length * 90}%`, pin: true, scrub: 0.6, anticipatePin: 1 } })
         gsap.set(cards.slice(1), { yPercent: 110, rotation: 2, opacity: 0 })
@@ -26,7 +26,7 @@ export default function Jobs() {
         tl.to({}, { duration: 0.6 })
       })
       // Phones and tablets: cards stack in normal flow and rise into view.
-      mm.add('(prefers-reduced-motion: no-preference) and (max-width: 900px)', () => {
+      mm.add('(prefers-reduced-motion: no-preference) and ((max-width: 900px) or (max-height: 699px))', () => {
         cards.forEach((c) => gsap.from(c, { opacity: 0, y: 40, ease: 'power2.out', scrollTrigger: { trigger: c, start: 'top 92%', end: 'top 68%', scrub: 0.5 } }))
       })
     }, el)
