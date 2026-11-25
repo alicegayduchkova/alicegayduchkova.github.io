@@ -112,4 +112,4 @@ Two tracks, LIFE AND SCHOOL and CAREER:
 Want to talk about my work or anything on this page? Email is the fastest way to reach me.
 
 ## Footer
-Alisa (Alice) Gayduchkova, Shrewsbury, Massachusetts. Project figures come from coursework and are not investment advice.
+© 2026 Alisa Gayduchkova
