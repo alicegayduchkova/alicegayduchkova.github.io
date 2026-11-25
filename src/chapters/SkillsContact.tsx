@@ -34,7 +34,7 @@ export default function SkillsContact() {
       </section>
       <section className="chapter contact" id="contact" aria-labelledby="contact-h">
         <div className="contact-inner">
-          <img className="portrait" src="/photo.png" width="421" height="421" alt="Portrait of Alisa Gayduchkova" loading="lazy" decoding="async" />
+          <picture><source srcSet="/photo.webp" type="image/webp" /><img className="portrait" src="/photo.png" width="421" height="421" alt="Portrait of Alisa Gayduchkova" loading="lazy" decoding="async" /></picture>
           <h2 id="contact-h">{contact.title}</h2>
           <p>{contact.text}</p>
           <p className="email"><a href={`mailto:${contact.email}`}>{contact.email}</a></p>

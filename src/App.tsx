@@ -21,7 +21,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main id="top">
+      <main id="main">
         <Landing />
         <Places />
         <Jobs />

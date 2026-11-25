@@ -1,5 +1,5 @@
 :root { --ink:#0F1412; --ink-2:#18201C; --blush:#E7B8AE; --sage:#8FBFA9; --paper:#EDE7E4;
-  --serif:'Instrument Serif','Iowan Old Style',Georgia,serif; --sans:'Figtree',system-ui,sans-serif; }
+  --serif:'Instrument Serif','Iowan Old Style',Georgia,serif; --sans:'Figtree',system-ui,-apple-system,'Segoe UI',Arial,sans-serif; }
 * { box-sizing:border-box; }
 html { background:var(--ink); }
 body { margin:0; background:var(--ink); color:var(--paper); font-family:var(--sans); line-height:1.5; -webkit-font-smoothing:antialiased; }
@@ -10,12 +10,19 @@ html.lenis, html.lenis body { height:auto; } .lenis.lenis-smooth { scroll-behavi
 
 .site-header { position:fixed; inset:0 0 auto 0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:14px 20px; pointer-events:none; background:linear-gradient(var(--ink) 35%, transparent); padding-bottom:28px; }
 .wordmark { pointer-events:auto; font-family:var(--serif); font-style:italic; font-size:1.9rem; color:var(--blush); text-decoration:none; }
+.skip { position:absolute; left:12px; top:-60px; background:var(--paper); color:var(--ink); padding:8px 14px; border-radius:6px; font-weight:600; z-index:60; pointer-events:auto; } .skip:focus { top:10px; }
+.site-nav { pointer-events:auto; position:relative; }
+.site-nav ul { list-style:none; margin:0; padding:0; display:flex; gap:4px; }
+.site-nav a { display:block; padding:6px 10px; border-radius:999px; color:var(--paper); text-decoration:none; font-size:.9rem; font-weight:600; } .site-nav a:hover { background:#1d2723; color:var(--blush); }
+.nav-toggle { display:none; background:#1d2723; border:1px solid #3a4741; color:var(--paper); border-radius:999px; padding:6px 14px; font-weight:600; font-size:.9rem; cursor:pointer; }
 .progress { position:fixed; left:0; right:0; top:0; height:3px; } .progress div { height:100%; background:var(--sage); transform-origin:0 50%; transform:scaleX(0); }
 
 /* Landing */
 .landing { height:100vh; height:100svh; overflow:hidden; position:relative; }
 .desk { position:absolute; inset:0; background:radial-gradient(ellipse at 50% 55%, #1c2622 0%, var(--ink) 70%); }
 .obj { position:absolute; width:calc(clamp(72px,9.5vw,138px) * var(--s)); margin:-0.5em 0 0 -0.5em; will-change:transform; }
+.float { animation:bob var(--d,3.5s) ease-in-out var(--dl,0s) infinite alternate; }
+@keyframes bob { from { transform:translateY(-7px) rotate(-2deg); } to { transform:translateY(7px) rotate(2deg); } }
 .obj-btn { all:unset; display:block; position:relative; cursor:default; border-radius:8px; }
 .obj-btn:focus-visible { outline:3px solid var(--sage); outline-offset:6px; }
 .obj svg { display:block; width:100%; height:auto; overflow:visible; filter:drop-shadow(3px 4px 0 rgba(0,0,0,.55)); }
@@ -43,6 +50,7 @@ html.lenis, html.lenis body { height:auto; } .lenis.lenis-smooth { scroll-behavi
 
 .screen-full { display:none; }
 @media (max-width:700px) {
+  .nav-toggle { display:block; } .site-nav ul { display:none; position:absolute; right:0; top:calc(100% + 8px); flex-direction:column; background:#151d19; border:1px solid #26302b; border-radius:12px; padding:8px; min-width:180px; box-shadow:4px 6px 0 rgba(0,0,0,.5); } .site-nav ul.open { display:flex; }
   .screen-full { display:flex; position:absolute; inset:0; flex-direction:column; justify-content:center; padding:84px 26px 40px; background:var(--ink); opacity:0; pointer-events:none; z-index:3; }
   .sf-name { font-family:var(--serif); font-style:italic; font-size:clamp(2.2rem,11vw,3rem); line-height:1.05; color:var(--blush); margin:0; }
   .sf-first { color:var(--sage); font-size:1.1rem; margin:.5rem 0 1rem; } .sf-rest { margin:0 0 1.2rem; font-size:1rem; }
@@ -51,4 +59,4 @@ html.lenis, html.lenis body { height:auto; } .lenis.lenis-smooth { scroll-behavi
   .obj { width:calc(clamp(56px,16vw,90px) * var(--s)); }
   .screen-extra { font-size:clamp(.5rem,2.3vw,.7rem); } .glance { gap:.2em .8em; }
 }
-@media (prefers-reduced-motion:reduce) { .obj { will-change:auto; } }
+@media (prefers-reduced-motion:reduce) { .obj { will-change:auto; } .float { animation:none; } }

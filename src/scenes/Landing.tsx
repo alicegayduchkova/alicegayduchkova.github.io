@@ -47,8 +47,7 @@ export default function Landing() {
       mm.add('(prefers-reduced-motion: no-preference) and (max-width: 700px)', () => build('+=110%', true))
       mm.add('(prefers-reduced-motion: reduce)', () => { root.current?.classList.add('is-static') })
 
-      // idle float on every object, mouse parallax on desktop
-      q<HTMLElement>('.float').forEach((f, i) => gsap.to(f, { y: gsap.utils.random(-8, 8), rotation: gsap.utils.random(-3, 3), duration: gsap.utils.random(2.5, 4), repeat: -1, yoyo: true, ease: 'sine.inOut', delay: i * 0.2 }))
+      // mouse parallax on desktop (the idle float is pure CSS, so it costs no JS per frame)
       mm.add('(pointer: fine) and (prefers-reduced-motion: no-preference)', () => {
         const movers = q<HTMLElement>('.parallax').map((p) => ({ x: gsap.quickTo(p, 'x', { duration: 0.8 }), y: gsap.quickTo(p, 'y', { duration: 0.8 }), d: Number(p.parentElement!.dataset.depth) }))
         const move = (e: MouseEvent) => { const nx = e.clientX / innerWidth - 0.5, ny = e.clientY / innerHeight - 0.5; movers.forEach((m) => { m.x(-nx * 36 * m.d); m.y(-ny * 36 * m.d) }) }
@@ -62,10 +61,10 @@ export default function Landing() {
   return (
     <section className="landing" ref={root} aria-label="Introduction">
       <div className="desk">
-        {objects.map((o) => (
+        {objects.map((o, i) => (
           <div key={o.id} className={`obj${o.mobile ? '' : ' m-hide'}`} data-depth={o.depth} data-x={o.x} data-y={o.y} data-rot={o.rot}
             style={{ left: `${o.x}%`, top: `${o.y}%`, ['--s' as string]: o.size, transform: `rotate(${o.rot}deg)` }}>
-            <div className="parallax"><div className="float">
+            <div className="parallax"><div className="float" style={{ ['--d' as string]: `${(2.8 + ((i * 0.37) % 1.4)).toFixed(2)}s`, ['--dl' as string]: `${(-i * 0.6).toFixed(1)}s` }}>
               <button type="button" className="obj-btn" aria-label={o.caption}>
                 <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">{o.art}</svg>
                 <span className="cap" role="tooltip">{o.caption}</span>

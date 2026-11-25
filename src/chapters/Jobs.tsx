@@ -28,7 +28,7 @@ export default function Jobs() {
   }, [])
 
   return (
-    <section className="chapter jobs" ref={root} aria-labelledby="jobs-h">
+    <section className="chapter jobs" id="jobs" ref={root} aria-labelledby="jobs-h">
       <div className="jobs-inner">
         <header className="jobs-head">
           <h2 id="jobs-h">{jobs.title}</h2>

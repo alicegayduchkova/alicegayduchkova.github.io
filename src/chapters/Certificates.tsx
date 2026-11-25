@@ -23,7 +23,7 @@ export default function Certificates() {
   }, [])
 
   return (
-    <section className="chapter certs" ref={root} aria-labelledby="certs-h">
+    <section className="chapter certs" id="certs" ref={root} aria-labelledby="certs-h">
       <header className="certs-head"><h2 id="certs-h">{certs.title}</h2><p>{certs.intro}</p></header>
       <div className="board">
         {certs.list.map((c) => (

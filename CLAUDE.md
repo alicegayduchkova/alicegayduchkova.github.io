@@ -15,3 +15,10 @@ Personal portfolio for Alisa (Alice) Gayduchkova, served at alicegayduchkova.git
 - Project figures are coursework, not investment advice. Keep the disclaimer in the footer.
 - Verify visual work in a real browser (screenshots at several scroll positions, desktop and mobile) before saying it works.
 - Respect `prefers-reduced-motion`.
+
+## Commands
+- `npm run dev` serves the site at http://localhost:5173/ (add `?lenis=off` to test without smooth scroll).
+- `npm run build` type-checks and builds to `dist/`; `npm run preview` serves the build at http://localhost:4173/.
+- Text lives in `src/content/copy.ts` (mirrors `content/copy.md`). Chapters are in `src/chapters/`, the landing scene in `src/scenes/`.
+- `legacy/index.html` is the previous site, kept in the repo only (not deployed).
+- Open TODOs for Alice: certificate images in `public/certs/`, real goal names in the time-horizon scene, a Bloomberg certificate date, and a replacement `public/og.png` if wanted.

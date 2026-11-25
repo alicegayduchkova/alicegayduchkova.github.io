@@ -23,7 +23,7 @@ export default function Places() {
   }, [])
 
   return (
-    <section className="chapter places" ref={root} aria-labelledby="places-h">
+    <section className="chapter places" id="places" ref={root} aria-labelledby="places-h">
       <div className="places-inner">
         <h2 id="places-h" className="places-head">{places.headline}</h2>
         <div className="places-body">
