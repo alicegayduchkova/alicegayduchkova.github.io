@@ -32,8 +32,6 @@
 .job-meta { margin:.2em 0 .9em; color:var(--sage); font-size:.95rem; }
 .job ul { margin:0 0 .9em; padding-left:1.1em; display:grid; gap:.45em; font-size:clamp(.88rem,1.35vw,1.05rem); }
 .learning { margin:.2em 0 .8em; padding:.6em .9em; border-left:3px solid var(--blush); background:#1d2723; font-size:clamp(.88rem,1.35vw,1.05rem); } .learning b { color:var(--blush); }
-.steps { list-style:none; margin:auto 0 0; padding:0; display:flex; flex-wrap:wrap; gap:6px 18px; font-size:.85rem; color:var(--paper); }
-.step::before { content:''; display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--sage); margin-right:7px; }
 .job-main { display:flex; flex-direction:column; min-height:0; }
 
 /* 3. Certificates */
@@ -57,5 +55,3 @@
   .places, .jobs { height:auto; overflow:visible; } .places-inner { padding:96px 24px; }
   .jobs-inner { height:auto; } .job-stack { display:grid; gap:24px; } .job { position:relative; inset:auto; } .level { display:none; }
 }
-/* Current role: third step stays dim in both motion modes. */
-.job:last-child .step:last-child { opacity:.3; }

@@ -30,7 +30,6 @@ export const jobs = {
   intro: 'Four roles so far, from solar sales to mutual funds. Each one brought me closer to working with clients in finance.',
   story:
     'Since 2024 I’ve held four jobs in four different industries: solar, manufacturing, marketing, and now mutual funds. Each time I started out knowing very little, figured it out, and then made it clear for the next person. That last part is why I like working with clients.',
-  steps: ['Started out knowing little', 'Figured it out', 'Made it clear for the next person'],
   list: [
     { industry: 'Solar', role: 'Solar Panel Sales Assistant', org: 'Sunrun', when: 'Jun – Aug 2024', where: 'Worcester, MA', bullets: [
       'Walked customers through solar products, pricing, and installation so they understood their options.',
