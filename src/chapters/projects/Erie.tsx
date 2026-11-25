@@ -3,6 +3,7 @@ import { gsap } from '../../lib/scroll'
 import { countUp, useScene } from '../../lib/scene'
 import ProjectShell from '../../components/ProjectShell'
 import { projects } from '../../content/copy'
+import { erieData } from '../../content/coursework'
 
 const e = projects.erie
 // Geometry (viewBox units)
@@ -54,7 +55,9 @@ export default function Erie() {
 
   return (
     <ProjectShell sceneRef={ref} id="erie-h" kind={e.kind} title={e.title} summary={e.summary} takeaway={e.takeaway} source={e.source}
-      extra={<dl className="stats"><div><dt>Average monthly return</dt><dd className="stat-avg">{e.avg.toFixed(2)}%</dd></div><div><dt>Standard deviation</dt><dd className="stat-sd">{e.sd.toFixed(2)}%</dd></div></dl>}>
+      extra={<><dl className="stats"><div><dt>Average monthly return</dt><dd className="stat-avg">{e.avg.toFixed(2)}%</dd></div><div><dt>Standard deviation</dt><dd className="stat-sd">{e.sd.toFixed(2)}%</dd></div></dl>
+        <p className="note">{erieData.method}</p>
+        <p className="note">{erieData.extremes} {erieData.cvNote}</p></>}>
       <div className="chart">
         <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Bar chart of monthly total return for ERIE, March to August: ${e.months.map(([m, v]) => `${m} ${fmt(v)}`).join(', ')}. Average ${e.avg}%, standard deviation ${e.sd}%.`}>
           <g className="grid">
@@ -78,14 +81,15 @@ export default function Erie() {
         </svg>
         {tip !== null && (
           <div className="tip" style={{ left: `${(cx(tip) / W) * 100}%`, top: `${(y(Math.max(e.months[tip][1], 0)) / H) * 100}%` }} role="status">
-            {e.months[tip][0]}: {fmt(e.months[tip][1])}
+            {erieData.rows[tip].label}: {fmt(e.months[tip][1])}
+            <small>Price {fmt(erieData.rows[tip].rcg)} · Dividend {fmt(erieData.rows[tip].rci)}</small>
           </div>
         )}
         <details className="data-table">
-          <summary>View the numbers</summary>
-          <table><caption>Monthly total return, % (Mar to Aug)</caption>
-            <thead><tr><th>Month</th><th>Total return</th></tr></thead>
-            <tbody>{e.months.map(([m, v]) => <tr key={m}><td>{m}</td><td>{fmt(v)}</td></tr>)}</tbody>
+          <summary>View the numbers (price, dividend, and total return for each month)</summary>
+          <table><caption>One Class A share, first trading day of each month (Yahoo Finance)</caption>
+            <thead><tr><th>Month</th><th>Start $</th><th>End $</th><th>Dividend $</th><th>Price change</th><th>Dividend yield</th><th>Total return</th></tr></thead>
+            <tbody>{erieData.rows.map((r) => <tr key={r.m}><td>{r.label}</td><td>{r.bp.toFixed(2)}</td><td>{r.ep.toFixed(2)}</td><td>{r.div.toFixed(3)}</td><td>{fmt(r.rcg)}</td><td>{r.rci.toFixed(2)}%</td><td>{fmt(r.r)}</td></tr>)}</tbody>
           </table>
         </details>
       </div>

@@ -28,3 +28,13 @@ export function countUp(tl: gsap.core.Timeline, node: Element | null, to: number
   tl.to(o, { v: to, duration: dur, ease: 'none', onUpdate: () => { node.textContent = fmt(o.v) } }, at)
   return () => { node.textContent = final }
 }
+
+/** Count any number up inside the timeline with a custom formatter. Returns a function that restores the final text. */
+export function countFmt(tl: gsap.core.Timeline, node: Element | null, from: number, to: number, at: number, dur: number, fmt: (v: number) => string): () => void {
+  if (!node) return () => {}
+  const final = node.textContent ?? ''
+  node.textContent = fmt(from)
+  const o = { v: from }
+  tl.to(o, { v: to, duration: dur, ease: 'none', onUpdate: () => { node.textContent = fmt(o.v) } }, at)
+  return () => { node.textContent = final }
+}

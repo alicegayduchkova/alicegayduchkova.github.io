@@ -28,7 +28,7 @@ export const places = {
 const logo = (src: string, alt: string) => ({ src, alt, w: 640, h: 400 })
 export const resume = {
   summary:
-    'Finance and Business Analytics student graduating in May 2028 with direct experience supporting financial advisors, shareholders, and beneficiaries at Franklin Templeton / Putnam Investments. Skilled in consultative client communication, mutual fund account servicing, sales support, research, and handling time-sensitive requests with accuracy and care.',
+    'Business Administration student concentrating in Finance and Business Analytics, with experience across client service, sales support, marketing, and business analytics. Currently support financial advisors, shareholders, and beneficiaries with mutual fund accounts at Franklin Templeton / Putnam Investments.',
 }
 export const jobs = {
   title: "Where I've worked",
@@ -37,8 +37,11 @@ export const jobs = {
     'Since 2024 I\u2019ve held four jobs in four different industries: solar, manufacturing, marketing, and now mutual funds. Each time I started out knowing very little, figured it out, and then made it clear for the next person. That last part is why I like working with clients.',
   list: [
     { industry: 'Solar', role: 'Solar Panel Sales Assistant', org: 'Sunrun', logo: logo('/logos/sunrun.webp', 'Sunrun logo'), when: 'Jun 2024 \u2013 Aug 2024', where: 'Worcester, MA',
-      bullets: ['Explained solar products, pricing, and installation options; prepared sales documents, proposals, and quotes and followed up on customer inquiries.'],
-      tags: ['Solar products', 'Pricing', 'Installation options', 'Proposals and quotes', 'Customer follow-up'] },
+      bullets: [
+        'Explained solar products, pricing, and installation processes so customers understood their options.',
+        'Prepared sales documents, proposals, and quotes for new and current clients.',
+        'Supported the sales team in generating leads and following up on customer inquiries.'],
+      tags: ['Solar products', 'Pricing', 'Installation processes', 'Proposals and quotes', 'Lead generation', 'Customer follow-up'] },
     { industry: 'Manufacturing', role: 'Business Analytics Intern', org: 'IPG Photonics Corporation', logo: logo('/logos/ipg-photonics.webp', 'IPG Photonics logo'), when: 'Jun 2025 \u2013 Dec 2025', where: 'Marlborough, MA',
       bullets: [
         'Interviewed staff to write standard operating procedures and built them into the in-house production database.',
@@ -51,10 +54,10 @@ export const jobs = {
         'Increased social media engagement by introducing short-form video content and interactive polls.',
         'Analyzed competitor brands to identify trends and gaps, informing content strategy and brand messaging.'],
       tags: ['Lead generation', 'Sales outreach', 'Short-form video', 'Interactive polls', 'Competitor analysis', 'Brand messaging'] },
-    { industry: 'Mutual funds', role: 'Client Representative Intern', org: 'Franklin Templeton / Putnam Investments', logo: logo('/logos/franklin-templeton.webp', 'Franklin Templeton Investments logo'), when: 'Jun 2026 \u2013 Present', where: 'Remote',
+    { industry: 'Mutual funds', role: 'Client Representative Intern', org: 'Franklin Templeton / Putnam Investments', logo: logo('/logos/franklin-templeton.webp', 'Franklin Templeton Investments logo'), when: 'Jun 2026 \u2013 Present', where: 'Andover, MA',
       bullets: [
         'Serve as a first point of contact for financial advisors, shareholders, and beneficiaries on inbound calls, building rapport and resolving mutual fund account questions in real time.',
-        'Explain purchases, redemptions, exchanges, transfers, share classes, and fees in plain language, within a nonadvisory role.',
+        'Explain purchases, redemptions, exchanges, transfers, share classes, and fees in plain language, within a non-advisory role.',
         'Guide beneficiaries through trust and inheritance paperwork after the loss of a loved one, keeping sensitive conversations calm, patient, and focused on next steps.',
         'Manage back-to-back calls and time-sensitive advisor requests while staying accurate, compliant, and professional.'],
       tags: ['Inbound calls', 'Mutual fund accounts', 'Purchases and redemptions', 'Exchanges and transfers', 'Share classes and fees', 'Trust and inheritance paperwork'],
@@ -111,7 +114,7 @@ export const school = {
     { name: 'A.I.M.', full: 'Artificial Intelligence Multidisciplinary Society', role: 'Director of Operations',
       text: "UMass Lowell's AI club, where students from every major work together on real AI projects. I help run the club's operations.", link: { href: 'https://aimsociety.org', label: 'aimsociety.org' } },
     { name: 'Manning School of Business', full: 'UMass Lowell', role: 'B.S. Business Administration',
-      courses: 'Financial Portfolio and Analysis, Financial Markets and Institutions, Marketing, Intro to Business Analytics, Business Information Systems, Microeconomics, Macroeconomics, Statistics' },
+      courses: 'Financial Portfolio and Analysis, Financial Markets and Institutions, Marketing, Intro to Business Analytics, Business Information Systems, Microeconomics, Statistics' },
     { name: 'Assumption University', full: 'Worcester, MA', role: 'NCAA Division II Swimming, 2024 – 2025. Transferred to UMass Lowell as a sophomore.',
       courses: 'Principles of Accounting I, Principles of Accounting II' },
   ],

@@ -109,11 +109,16 @@
 .co { fill:#1d2723; stroke:var(--blush); stroke-width:2; }
 .flow { fill:none; stroke-linecap:round; stroke-dasharray:1 14; } .flow.thin { stroke:var(--sage); stroke-width:4; } .flow.fee { stroke:var(--blush); stroke-width:14; } .flow.lend { stroke:var(--sage); stroke-width:9; } .flow.wealth { stroke:var(--paper); stroke-width:9; }
 
-.th { display:grid; gap:clamp(12px,2.4vh,24px); }
+.th { display:grid; gap:clamp(10px,1.8vh,18px); }
 .th-axis { display:flex; align-items:center; gap:12px; font-size:.85rem; color:#B9B3B0; } .th-track { position:relative; flex:1; height:2px; background:#3a4741; } .th-marker { position:absolute; top:50%; left:100%; width:14px; height:14px; margin:-7px 0 0 -7px; border-radius:50%; background:var(--blush); box-shadow:0 0 0 3px #151d19; }
-.th-lanes { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(8px,1.4vw,18px); }
-.lane { background:#1d2723; border:1px solid #2f3a35; border-radius:10px; padding:12px; min-height:clamp(150px,26vh,230px); } .lane h4 { margin:0; font-size:1rem; } .lane-note { margin:.15em 0 .8em; color:var(--sage); font-size:.85rem; font-weight:600; }
-.chips { display:grid; gap:8px; margin-top:10px; } .chip-goal { display:block; background:var(--paper); border-radius:3px; padding:8px 10px; box-shadow:3px 4px 0 rgba(0,0,0,.5); } .chip-goal i { display:block; height:4px; background:#9aa19d; border-radius:2px; margin:4px 0; } .chip-goal i + i { width:60%; }
+.th-lanes { display:grid; gap:10px; }
+.lane { display:grid; grid-template-columns:112px 1fr; gap:14px; background:#1d2723; border:1px solid #2f3a35; border-radius:10px; padding:12px 14px; }
+.lane h4 { margin:0; font-size:.95rem; } .lane-note { margin:.15em 0 0; color:var(--sage); font-size:.82rem; font-weight:600; }
+.goal h5 { margin:0; font-size:1.02rem; font-weight:600; } .goal-when { margin:.1em 0 .4em; color:var(--sage); font-size:.85rem; }
+.goal-amt { margin:0 0 .4em; font-size:.95rem; } .goal-amt i { font-style:normal; color:#B9B3B0; } .amt-was { color:#B9B3B0; } .amt-now { color:var(--blush); font-size:1.05rem; }
+.goal-text { margin:0; font-size:.85rem; color:#B9B3B0; line-height:1.45; }
+.th-also { margin:0; font-size:.88rem; color:#B9B3B0; }
+.sources { font-size:.85rem; color:#B9B3B0; } .sources summary { cursor:pointer; } .sources p { margin:.5em 0; } .sources ul { margin:.3em 0 0; padding-left:1.1em; display:grid; gap:.3em; } .sources a { color:var(--blush); }
 .th-dial { max-width:300px; margin:0 auto; width:100%; } .th-dial svg { width:100%; height:auto; display:block; } .needle line { stroke:var(--paper); stroke-width:3; stroke-linecap:round; } .needle circle { fill:var(--paper); }
 .dial-labels { display:flex; justify-content:space-between; font-size:.85rem; font-weight:600; margin-top:-6px; } .dial-labels span:first-child { color:var(--sage); } .dial-labels span:last-child { color:var(--blush); }
 
@@ -123,7 +128,7 @@
 }
 @media (max-width:700px) {
   .chart .ax { font-size:21px; } .chart .lbl { font-size:23px; } .avg-line { stroke-width:3; }
-  .ft-grid { grid-template-columns:1fr; } .lane-note { display:none; } .lane { padding:8px; min-height:0; } .lane h4 { font-size:.85rem; }
+  .ft-grid { grid-template-columns:1fr; } .lane { grid-template-columns:1fr; gap:6px; } .lane-head { display:flex; gap:10px; align-items:baseline; }
 }
 @media (prefers-reduced-motion:reduce) { .scene { height:auto; overflow:visible; padding-top:56px; } .chart svg, .ft-card svg { max-height:none; } }
 
@@ -175,3 +180,45 @@
   .tl-track-name { display:inline; margin-right:.5em; text-transform:uppercase; letter-spacing:.06em; font-size:.75rem; }
   .clusters { grid-template-columns:1fr; }
 }
+
+/* Erie company scene */
+.facts { margin:0 0 1em; display:grid; gap:8px; } .facts div { border-top:1px solid #26302b; padding-top:7px; } .facts dt { color:var(--sage); font-size:.78rem; font-weight:600; letter-spacing:.07em; text-transform:uppercase; } .facts dd { margin:.1em 0 0; font-size:.92rem; }
+.note { margin:.6em 0 0; font-size:.86rem; color:#B9B3B0; }
+.co { display:grid; gap:clamp(10px,1.8vh,16px); }
+.co-trends { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; } .tb { margin:0; min-width:0; }
+.tb-title { font-size:.8rem; font-weight:600; color:var(--paper); margin-bottom:6px; }
+.tb-row { display:grid; grid-template-columns:34px 1fr auto; gap:6px; align-items:center; margin-bottom:6px; font-size:.78rem; } .tb-yr { color:#B9B3B0; }
+.tb-track { height:14px; } .tb-bar { display:block; height:100%; background:var(--sage); border-radius:0 4px 4px 0; transform-origin:0 50%; } .tb-ni .tb-bar, .tb-h1 .tb-bar { background:var(--blush); }
+.tb-val { font-weight:600; font-variant-numeric:tabular-nums; min-width:3.6em; text-align:right; }
+.chart-note { margin:0; font-size:.86rem; color:#B9B3B0; }
+.control-head { margin:0 0 6px; font-size:.8rem; font-weight:600; } .seg-bar { height:22px; border-radius:4px; background:#26302b; display:flex; overflow:hidden; gap:2px; } .seg { display:block; height:100%; transform-origin:0 50%; } .seg-0 { background:var(--sage); } .seg-1 { background:var(--blush); }
+.seg-legend { list-style:none; margin:8px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:4px 18px; font-size:.84rem; } .seg-legend b { font-variant-numeric:tabular-nums; } .sw { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; } .sw-0 { background:var(--sage); } .sw-1 { background:var(--blush); }
+.control-note { margin:.5em 0 0; font-size:.84rem; color:#B9B3B0; }
+.pc { display:grid; grid-template-columns:1fr 1fr; gap:14px; } .pc h4 { margin:0 0 6px; font-size:.8rem; letter-spacing:.07em; text-transform:uppercase; color:var(--sage); } .pc-col:last-child h4 { color:var(--blush); }
+.pc ul { margin:0; padding-left:1.05em; display:grid; gap:.3em; font-size:.83rem; line-height:1.4; }
+
+/* Smart investors scene */
+.compare { margin:.4em 0 1em; font-size:clamp(.86rem,1.15vw,.98rem); color:#B9B3B0; }
+.si { display:grid; gap:clamp(10px,1.8vh,16px); }
+.nw { display:grid; gap:6px; } .nw-row { display:grid; grid-template-columns:minmax(130px,.5fr) 1fr 56px; gap:10px; align-items:center; font-size:.88rem; } .nw-name small { color:#B9B3B0; margin-left:4px; }
+.nw-track { height:14px; } .nw-bar { display:block; height:100%; background:var(--sage); border-radius:0 4px 4px 0; transform-origin:0 50%; } .nw-bar-ortega { background:var(--blush); } .nw-val { font-weight:600; text-align:right; font-variant-numeric:tabular-nums; } .nw-note { margin:2px 0 0; font-size:.78rem; color:#B9B3B0; }
+.si-cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; } .card { background:#1d2723; border:1px solid #2f3a35; border-radius:10px; padding:12px 14px; min-width:0; }
+.card header h4 { margin:0; font-family:var(--serif); font-style:italic; font-weight:400; font-size:1.5rem; color:var(--blush); } .card header p { margin:0 0 8px; font-size:.82rem; color:var(--sage); }
+.chain { list-style:none; margin:0 0 10px; padding:0; display:grid; gap:0; } .step { position:relative; background:var(--paper); color:var(--ink); border-radius:3px; padding:6px 10px; font-size:.82rem; font-weight:600; margin-bottom:14px; box-shadow:2px 3px 0 rgba(0,0,0,.5); } .step:last-child { margin-bottom:0; }
+.arrow { position:absolute; left:50%; top:100%; width:10px; height:14px; margin-left:-5px; overflow:visible; } .link { stroke:var(--sage); stroke-width:3; stroke-linecap:round; stroke-dasharray:1 7; fill:none; }
+.card p { margin:0 0 6px; font-size:.8rem; line-height:1.4; } .card p b { color:var(--sage); } .card .loss b { color:var(--blush); } .card .avoid { color:#B9B3B0; }
+.src { font-size:.76rem; color:#B9B3B0; } .src summary { cursor:pointer; } .src ul { margin:.3em 0 0; padding-left:1.1em; }
+
+@media (max-width:900px) { .si-cols, .pc { grid-template-columns:1fr; } .co-trends { grid-template-columns:1fr; } .nw-row { grid-template-columns:1fr 56px; } .nw-track { grid-column:1 / -1; grid-row:2; } .nw-val { grid-row:1; grid-column:2; } }
+@media (max-width:700px) { .lane-head h4 { font-size:.95rem; } }
+
+/* Short laptop screens: tighten the pinned project scenes so nothing is clipped */
+@media (min-width:901px) and (max-height:820px) {
+  .scene { padding-top:76px; padding-bottom:14px; }
+  .scene h3 { font-size:clamp(1.5rem,2.6vw,2.2rem); margin-bottom:.35em; } .summary { font-size:.9rem; margin-bottom:.6em; }
+  .takeaway { font-size:.88rem; padding:.55em .9em; } .source { font-size:.78rem; margin-top:.4em; }
+  .stats dd { font-size:1.9rem; } .note { font-size:.8rem; margin-top:.4em; } .facts { margin-bottom:.6em; } .facts dd { font-size:.86rem; }
+  .th-dial { max-width:210px; } .th-also { font-size:.82rem; margin:.4em 0; } .sources { font-size:.8rem; }
+  .compare { font-size:.84rem; margin-bottom:.6em; }
+}
+.th-dial { margin:.4em 0 0; }

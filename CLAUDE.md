@@ -19,6 +19,8 @@ Personal portfolio for Alisa (Alice) Gayduchkova, served at alicegayduchkova.git
 ## Commands
 - `npm run dev` serves the site at http://localhost:5173/ (add `?lenis=off` to test without smooth scroll).
 - `npm run build` type-checks and builds to `dist/`; `npm run preview` serves the build at http://localhost:4173/.
-- Text lives in `src/content/copy.ts` (mirrors `content/copy.md`). Chapters are in `src/chapters/`, the landing scene in `src/scenes/`.
+- Text lives in `src/content/copy.ts` (mirrors `content/copy.md`, but job details follow Alice's newer résumé text where it differs) and `src/content/coursework.ts` (her coursework write-ups: ERIE data and research, Huang vs. Ortega, investment goals). Chapters are in `src/chapters/`, the landing scene in `src/scenes/`.
 - `legacy/index.html` is the previous site, kept in the repo only (not deployed).
 - Open TODOs for Alice: certificate images in `public/certs/`, real goal names in the time-horizon scene, a Bloomberg certificate date, and a replacement `public/og.png` if wanted.
+- `public/resume.pdf` is older than the résumé text now on the site (Sunrun bullets, Andover location, summary). Replace it with the current PDF.
+- Left off the site on purpose: phone number, and the Roth IRA / Fidelity account sentence from the investor write-up.
